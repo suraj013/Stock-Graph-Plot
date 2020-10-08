@@ -51,13 +51,13 @@ def plot():
     p.rect(df.index[df.Status=="Decrease"],df.Middle[df.Status=="Decrease"],hours_12,
         df.Height[df.Status=="Decrease"], fill_color="#FF3333",line_color="black")
 
-    script1, div1 = components(p)
+    script, div = components(p)
 
     cdn_js=CDN.js_files[0]
     #cdn_css=CDN.css_files
     return render_template("plot.html",
-    script1=script1,
-    div1=div1,
+    script=script,
+    div=div,
     cdn_js=cdn_js)
 
 @app.route('/')
